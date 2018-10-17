@@ -46,26 +46,36 @@ var halloween = {
   letteNum: [],
   numRemaining: 10,
   ratio: "",
+  //returns value between 0-12
   "randomNum": function () {
     var rndnum = Math.floor(Math.random() * 12);
 
     return rndnum;
   },
+  //returns a index value from word array 
   "computerWord": function () {
     var rndWord = halloween["words"][this.randomNum()];
     return rndWord;
   },
-  "numUnderScores": function () {
-    var numHowMany = halloween.computerWord();
 
-    var wordlength = numHowMany.length;
+  "numUnderScores": function (halloween) {
+    var randomword = halloween[this.computerWord()];
+    for (var i = 0; i < randomword.length;)
+    {
+      return console.log("_ ")
+    }
 
-
-    return wordlength;
     //var numUnderSpace = numHowMan;
   },
 };
 
+function lettelength (){
 
-console.log(halloween.numUnderScores())
+  var fucUnSc = halloween.computerWord();
+
+  return fucUnSc.length;
+
+}
+console.log(halloween.numUnderScores());
+console.log(halloween.computerWord());
 //+ halloween.numUnderScores());
