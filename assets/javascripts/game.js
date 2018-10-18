@@ -1,3 +1,4 @@
+var rndWord;
 var halloween = {
   words: [
     "bone",
@@ -15,57 +16,57 @@ var halloween = {
   ],
   wins: 0,
   loses: 0,
-  guessedLetters: [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z"
-  ],
+  wordSelected: "",
+
+
   letteNum: [],
   numRemaining: 10,
   ratio: "",
+
   "randomNum": function () {
     var rndnum = Math.floor(Math.random() * 12);
-
     return rndnum;
   },
   "computerWord": function () {
     var rndWord = halloween["words"][this.randomNum()];
+    this.wordSelected = rndWord;
+
     return rndWord;
   },
   "numUnderScores": function () {
-    var numHowMany = halloween.computerWord();
 
-    var wordlength = numHowMany.length;
 
+    var wordlength = this.wordSelected.length;
+    var unSC = "_ ";
+
+    for (var i = 0; i < this.wordSelected.length; i++) {
+
+      var repeat = console.log("_ ");
+
+
+    };
+
+    return repeat;
 
     return wordlength;
-    //var numUnderSpace = numHowMan;
   },
+
 };
 
 
-console.log(halloween.numUnderScores())
+
+
+
+
+
+
+
+
+var word = halloween.computerWord();
+
+console.log(halloween.wordSelected);
+console.log(halloween.numUnderScores());
+
 //+ halloween.numUnderScores());
+
+//document.querySelector("gamepad").addEventListener(onkeyup, "")
