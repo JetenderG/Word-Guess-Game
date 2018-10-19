@@ -1,22 +1,23 @@
 var rndWord;
 var halloween = {
   words: [
-    "bone",
-    "black Cat",
-    "cemetery",
-    "crypt",
-    "bogeyman",
-    "ghost",
+    "Bone",
+    "BlackCat",
+    "Cemetery",
+    "Crypt",
+    "Bogeyman",
+    "Ghost",
     "WereWolf",
-    "Grim Reaper",
+    "GrimReaper",
     "Zombie",
     "Frankenstein",
-    "candy",
-    "witch"
+    "Candy",
+    "Witch"
   ],
   wins: 0,
   loses: 0,
   wordSelected: "",
+  unSC: "",
 
 
   letteNum: [],
@@ -36,37 +37,53 @@ var halloween = {
   "numUnderScores": function () {
 
 
-    var wordlength = this.wordSelected.length;
-    var unSC = "_ ";
+    // var wordlength = this.wordSelected.length;
 
     for (var i = 0; i < this.wordSelected.length; i++) {
-
-      var repeat = console.log("_ ");
-
-
+      //__________________________________
+      document.write("_ ")
+      //________________________________________
     };
 
-    return repeat;
 
-    return wordlength;
   },
+
+  "arraycreation": function () {
+
+    var createArray = this.wordSelected.split("");
+
+    return createArray;
+  },
+
+
+  "search": function () {
+
+
+  }
+
+
+
 
 };
 
 
+// finding specfic letters
+// return index value of letter
+//replace _ with letter
+//increment wins/loss
+//deincrement guesses 
 
 
 
 
 
 
-
+//document.addEventListener("onkeyup", function () {if (onkeyup === halloween.wordSelected));
 
 var word = halloween.computerWord();
-
-console.log(halloween.wordSelected);
 console.log(halloween.numUnderScores());
-
+console.log(halloween.wordSelected);
+console.log(halloween.arraycreation());
 //+ halloween.numUnderScores());
 
 //document.querySelector("gamepad").addEventListener(onkeyup, "")
