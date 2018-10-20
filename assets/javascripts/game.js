@@ -26,27 +26,18 @@ var halloween = {
   unSC: "",
   numRemaining: 10,
   ratio: "",
-<<<<<<< HEAD
   alophabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   //Generates random Number
-=======
-  //returns value between 0-12
->>>>>>> 93058ce9af2d97e8e00182e82b61dd47bbdbe531
   "randomNum": function () {
     var rndnum = Math.floor(Math.random() * 12);
     return rndnum;
   },
-<<<<<<< HEAD
   //Generates Random Word
-=======
-  //returns a index value from word array 
->>>>>>> 93058ce9af2d97e8e00182e82b61dd47bbdbe531
   "computerWord": function () {
     var rndWord = halloween["words"][this.randomNum()];
     this.wordSelected = rndWord;
     return rndWord;
   },
-<<<<<<< HEAD
   "genRndArray": function () {
 
     for (var i = 0; i < this.wordSelected.length; i++) {
@@ -118,17 +109,6 @@ var halloween = {
     for (var i = 0; i < this.wordSelected.length; i++) {
       if (input === "b") {};
     }
-=======
-
-  "numUnderScores": function (halloween) {
-    var randomword = halloween[this.computerWord()];
-    for (var i = 0; i < randomword.length;)
-    {
-      return console.log("_ ")
-    }
-
-    //var numUnderSpace = numHowMan;
->>>>>>> 93058ce9af2d97e8e00182e82b61dd47bbdbe531
   },
 
 
@@ -141,13 +121,7 @@ var halloween = {
 
 };
 
-function lettelength (){
 
-  var fucUnSc = halloween.computerWord();
-
-  return fucUnSc.length;
-
-<<<<<<< HEAD
 // finding specfic letters
 // return index value of letter
 //replace _ with letter
@@ -202,9 +176,3 @@ console.log(halloween.guessremaing());
 
 
 //
-=======
-}
-console.log(halloween.numUnderScores());
-console.log(halloween.computerWord());
-//+ halloween.numUnderScores());
->>>>>>> 93058ce9af2d97e8e00182e82b61dd47bbdbe531
