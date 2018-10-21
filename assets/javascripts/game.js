@@ -83,9 +83,10 @@ var halloween = {
     return alphaUS
   },
   "replceUC": function (input) {
-    halloween.alophabet.forEach(function (items, index, alphabetUnderscore) {
+    halloween.alophabet.forEach(function (items, index) {
       if (input === items) {
-        var letter = alphabetUnderscore[index] = input;
+        var letter = input
+        alphabetUnderscore[index] = input;
       }
       return letter;
     })
