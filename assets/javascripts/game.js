@@ -104,15 +104,26 @@ var halloween = {
   },
 
   "guessremaing": function () {
+    var remaining = 15;
 
-    this.guesses++;
+    if (remaining = 0) {
+
+      alert("Game Over")
+    } else {
+
+      remaining - 1;
+    }
+
+
+
+
   },
   // search word thorugh use input 
   "search": function () {
 
-    this.genRndArray.forEach(function (item, index) {
+    this.genRndArray().forEach(function (items) {
 
-      if (input === item) {
+      if (input === items) {
         letterNum[index] = input;
       }
     })
@@ -162,22 +173,22 @@ document.addEventListener("keyup", function (event) {
   }
 
 );
+console.log(halloween.guessremaing())
+console.log(halloween.computerWord());
+console.log(halloween.guesses);
 
-
-document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guesses;
+document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guessremaing;
 document.querySelector(".wins").innerHTML = "Winds :  " + halloween.wins;
 document.querySelector(".lose").innerHTML = "Loses :  " + halloween.loses;
 
 document.querySelector(".alguess").innerHTML = "Letter Guessed  :" + halloween.alphaunderscore();
 document.querySelector(".wordGuess").innerHTML = "Word to be Guessed :  " + halloween.numUnderScores();
 
-document.write(halloween.guesses);
 
 
 //+ halloween.numUnderScores());
 
 console.log(letterNum);
-console.log(halloween.computerWord());
 console.log(halloween.numUnderScores());
 console.log(letterNum);
 console.log(halloween.arraycreation());
