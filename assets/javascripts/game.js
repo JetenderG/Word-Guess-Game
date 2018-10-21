@@ -4,6 +4,9 @@ var letterNum = [];
 var createArray = [];
 var alpharray = [];
 var alphabetUnderscore = [];
+var guesses = 0;
+var input;
+
 var halloween = {
   words: [
     "Bone",
@@ -19,12 +22,11 @@ var halloween = {
     "Candy",
     "Witch"
   ],
-  guesses: 0,
   wins: 0,
   loses: 0,
   wordSelected: "",
   unSC: "",
-  numRemaining: 10,
+  numRemaining: 15,
   ratio: "",
   alophabet: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   //Generates random Number
@@ -39,42 +41,29 @@ var halloween = {
     return rndWord;
   },
   "genRndArray": function () {
-
     for (var i = 0; i < this.wordSelected.length; i++) {
-
       rndWordArray = this.wordSelected.split("");
-
       return rndWordArray
     }
-
-
-
   },
   //Generates the UnderScores
   "numUnderScores": function () {
     // var wordlength = this.wordSelected.length;
     for (var i = 0; i < this.wordSelected.length; i++) {
       letterNum.push("_ ");
-
     }
-
     return letterNum.join("");
-
   },
-
-
   //Number guesses or user input placed 
   "guesses": function () {
     var limit = 15;
-
-    if (this.guesses < limit) {
-      this.guesses++
+    if (guesses < limit) {
+      return guesses++
     }
   },
   // Generates an array the splits the letter of random word
   "arraycreation": function () {
     arraysplit = this.wordSelected.split("");
-
     for (var i = 0; i < this.wordSelected.length; i++) {
       createArray = arraysplit.join("");
     }
@@ -90,55 +79,37 @@ var halloween = {
     for (var i = 0; i < 27; i++) {
       alphabetUnderscore.push("_ ");
     }
-    return alphabetUnderscore.join("");
+    var alphaUS = alphabetUnderscore.join("");
+    return alphaUS
   },
-
   "replceUC": function (input) {
-
-    this.alophabet.forEach(function (item, index) {
-
-      if (input === item) {
-        alphabetUnderscore[index] = input;
-      }
-    })
-  },
-
-  "guessremaing": function () {
-    var remaining = 15;
-
-    if (remaining = 0) {
-
-      alert("Game Over")
-    } else {
-
-      remaining - 1;
-    }
-
-
-
-
-  },
-  // search word thorugh use input 
-  "search": function () {
-
-    this.genRndArray().forEach(function (items) {
-
+    halloween.alophabet.forEach(function (items, index, alphabetUnderscore) {
       if (input === items) {
-        letterNum[index] = input;
+        var letter = alphabetUnderscore[index] = input;
       }
+      return letter;
     })
-
   },
 
-
-
-
+  // search word thorugh use input 
+  "search": function (input) {
+    this.genRndArray().forEach(function (items, index) {
+      console.log(items);
+      console.log(index);
+      console.log(input);
+    });
+  },
   // Look into wheather you win or lose 
-  "gameWL": function () {
-    this.wins += 1;
-    this.loses += 1;
+  "gameW": function () {
+    if (this.genRndArray === letterNum) {
+      this.wins += 1;
+    }
+  },
+  "gameL": function () {
+    if (this.guesses === 0 && this.genRndArray !== letterNum) {
+      this.loses += 1;
+    }
   }
-
 };
 
 
@@ -152,42 +123,25 @@ var halloween = {
 
 
 
-
 document.addEventListener("keyup", function (event) {
-    //funt();
-    //funct2();
-    var input = event.key;
-
-    if (halloween.alophabet.includes(input) == true); {
-      halloween.guessremaing();
-
-      if (input != alpharray) {
-        halloween.replceUC();
-        halloween.guessremaing();
-      }
-
-
-
-
-    }
+  var input = event.key;
+  if (halloween.alophabet.includes(input) == true); {
+    halloween.guesses();
+    if (alpharray.includes(input) == false) {
+      halloween.replceUC(input);
+      console.log(halloween.replceUC(input));
+    };
   }
-
-);
-console.log(halloween.guessremaing())
+});
+console.log(halloween.guessremaing)
 console.log(halloween.computerWord());
 console.log(halloween.guesses);
-
-document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guessremaing;
+document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guesses;
 document.querySelector(".wins").innerHTML = "Winds :  " + halloween.wins;
 document.querySelector(".lose").innerHTML = "Loses :  " + halloween.loses;
-
 document.querySelector(".alguess").innerHTML = "Letter Guessed  :" + halloween.alphaunderscore();
 document.querySelector(".wordGuess").innerHTML = "Word to be Guessed :  " + halloween.numUnderScores();
-
-
-
 //+ halloween.numUnderScores());
-
 console.log(letterNum);
 console.log(halloween.numUnderScores());
 console.log(letterNum);
@@ -196,7 +150,10 @@ console.log(halloween.alphcreate());
 console.log(createArray);
 console.log(halloween.alphaunderscore());
 console.log(halloween.genRndArray());
-console.log(halloween.guessremaing());
+console.log(halloween.guesses());
+console.log(halloween.search());
+console.log(input);
+//console.log(halloween.replceUC(input));
 //document.querySelector("gamepad").addEventListener(onkeyup, "")
 
 
