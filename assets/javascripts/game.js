@@ -1,5 +1,5 @@
 var rndWord;
-var rndWordArray = []
+var rndWordArray = [];
 var letterNum = [];
 var createArray = [];
 var alpharray = [];
@@ -42,9 +42,9 @@ var halloween = {
 
     for (var i = 0; i < this.wordSelected.length; i++) {
 
-      rndWordArray = rndWord.split()
+      rndWordArray = this.wordSelected.split("");
 
-
+      return rndWordArray
     }
 
 
@@ -60,7 +60,10 @@ var halloween = {
 
     return letterNum.join("");
 
-  }, //Number guesses or user input placed 
+  },
+
+
+  //Number guesses or user input placed 
   "guesses": function () {
     var limit = 15;
 
@@ -92,7 +95,7 @@ var halloween = {
 
   "replceUC": function (input) {
 
-    alphabetUnderscore.forEach(function (item, index) {
+    this.alophabet.forEach(function (item, index) {
 
       if (input === item) {
         alphabetUnderscore[index] = input;
@@ -106,10 +109,16 @@ var halloween = {
   },
   // search word thorugh use input 
   "search": function () {
-    for (var i = 0; i < this.wordSelected.length; i++) {
-      if (input === "b") {};
-    }
+
+    this.genRndArray.forEach(function (item, index) {
+
+      if (input === item) {
+        letterNum[index] = input;
+      }
+    })
+
   },
+
 
 
 
@@ -138,12 +147,14 @@ document.addEventListener("keyup", function (event) {
     //funct2();
     var input = event.key;
 
-    if (input === halloween.alophabet.includes(input)); {
+    if (halloween.alophabet.includes(input) == true); {
       halloween.guessremaing();
 
       if (input != alpharray) {
         halloween.replceUC();
+        halloween.guessremaing();
       }
+
 
 
 
@@ -154,15 +165,18 @@ document.addEventListener("keyup", function (event) {
 
 
 document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guesses;
-document.querySelector(".wordGuess").innerHTML = letterNum.join(" ");
-document.querySelector(".wins").innerHTML = "wins :  " + halloween.wins;
-document.querySelector(".alguess").innerHTML = halloween.guesses;
+document.querySelector(".wins").innerHTML = "Winds :  " + halloween.wins;
+document.querySelector(".lose").innerHTML = "Loses :  " + halloween.loses;
+
+document.querySelector(".alguess").innerHTML = "Letter Guessed  :" + halloween.alphaunderscore();
+document.querySelector(".wordGuess").innerHTML = "Word to be Guessed :  " + halloween.numUnderScores();
+
 document.write(halloween.guesses);
 
 
 //+ halloween.numUnderScores());
 
-console.log(alpharray);
+console.log(letterNum);
 console.log(halloween.computerWord());
 console.log(halloween.numUnderScores());
 console.log(letterNum);
@@ -170,7 +184,7 @@ console.log(halloween.arraycreation());
 console.log(halloween.alphcreate());
 console.log(createArray);
 console.log(halloween.alphaunderscore());
-console.log(rndWordArray);
+console.log(halloween.genRndArray());
 console.log(halloween.guessremaing());
 //document.querySelector("gamepad").addEventListener(onkeyup, "")
 
