@@ -55,7 +55,7 @@ var halloween = {
     return letterNum.join("");
   },
   //Number guesses or user input placed 
-  "guesses": function () {
+  "guessestyped": function () {
     var limit = 15;
     if (guesses < limit) {
       return guesses++
@@ -83,13 +83,12 @@ var halloween = {
     return alphaUS
   },
   "replceUC": function (input) {
-    halloween.alophabet.forEach(function (items, index) {
-      if (input === items) {
-        var letter = input
-        alphabetUnderscore[index] = input;
-      }
-      return letter;
-    })
+    var index = halloween.alophabet.indexOf(input);
+    if (index >= 0) {
+      alphabetUnderscore[index] = input;
+      return input;
+    }
+    return input;
   },
 
   // search word thorugh use input 
@@ -125,9 +124,9 @@ var halloween = {
 
 
 document.addEventListener("keyup", function (event) {
-  var input = event.key;
+  input = event.key;
   if (halloween.alophabet.includes(input) == true); {
-    halloween.guesses();
+    halloween.guessestyped();
     if (alpharray.includes(input) == false) {
       halloween.replceUC(input);
       console.log(halloween.replceUC(input));
@@ -137,7 +136,7 @@ document.addEventListener("keyup", function (event) {
 console.log(halloween.guessremaing)
 console.log(halloween.computerWord());
 console.log(halloween.guesses);
-document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + halloween.guesses;
+document.querySelector(".numguess").innerHTML = "Guesses Remaining :  " + guesses;
 document.querySelector(".wins").innerHTML = "Winds :  " + halloween.wins;
 document.querySelector(".lose").innerHTML = "Loses :  " + halloween.loses;
 document.querySelector(".alguess").innerHTML = "Letter Guessed  :" + halloween.alphaunderscore();
@@ -151,9 +150,10 @@ console.log(halloween.alphcreate());
 console.log(createArray);
 console.log(halloween.alphaunderscore());
 console.log(halloween.genRndArray());
-console.log(halloween.guesses());
+console.log(halloween.guessestyped());
 console.log(halloween.search());
 console.log(input);
+console.log(alphabetUnderscore);
 //console.log(halloween.replceUC(input));
 //document.querySelector("gamepad").addEventListener(onkeyup, "")
 
