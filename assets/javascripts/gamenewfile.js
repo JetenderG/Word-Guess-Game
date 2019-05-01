@@ -39,7 +39,7 @@ var halloween = {
     ////////////////////////////////////////////////////////////////////////
     //Methods
     "RndWord": function () {
-        var rnd = Math.floor(Math.random() * 3)
+        var rnd = Math.floor(Math.random() * 12)
         Wrnd = halloween["words"][rnd];
         for (var i = 0; i < Wrnd.length; i++) {
             rndWord = Wrnd.split("");
@@ -109,6 +109,7 @@ var halloween = {
             this.winner = this.winner + 1;
             document.querySelector(".wins").innerHTML = "Win :  " + halloween.winner;
             return this.winner;
+            
 
 
         } else if (this.guess === 0) {
@@ -130,8 +131,13 @@ var halloween = {
         }
 
 
+    },
+    "startUp" : function(){
+
     }
 }
+
+//Game Starts
 
 
 document.addEventListener("keyup", function (event) {
