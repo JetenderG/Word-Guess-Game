@@ -108,6 +108,7 @@ var halloween = {
             alert("Winner");
             this.winner = this.winner + 1;
             document.querySelector(".wins").innerHTML = "Win :  " + halloween.winner;
+            this.startUp();
             return this.winner;
             
 
@@ -117,6 +118,7 @@ var halloween = {
             alert("You Lose");
             this.loser = this.loser + 1;
             document.querySelector(".lose").innerHTML = "Lose :  " + halloween.loser;
+            this.startUp();
             return this.loser;
 
         }
@@ -133,12 +135,24 @@ var halloween = {
 
     },
     "startUp" : function(){
+    Wrnd = "";
+ rndWord = [];
+ rndWordUC = [];
+ alphabetUS = [];
+ alphabetNC = [];    
+this.guess= 15;    
+this.RndWord();
+this.RndWordUC();
+this.alphabetarray()
+this.update()
+this.replaceUCword();
 
     }
 }
 
 //Game Starts
 
+halloween.startUp();
 
 document.addEventListener("keyup", function (event) {
     var input = event.key;
@@ -173,7 +187,7 @@ document.querySelector('.wordGuess').innerHTML = "Word  :  "
 
 
 
-
+/*
 console.log(halloween.RndWord());
 console.log(halloween.RndWordUC());
 console.log(halloween.alphabet);
@@ -185,3 +199,5 @@ console.log(rndWord);
 console.log(halloween.guess);
 console.log(halloween.replaceUCword());
 console.log(worduser);
+
+*/
