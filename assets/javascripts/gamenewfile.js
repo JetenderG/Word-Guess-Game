@@ -110,7 +110,7 @@ var halloween = {
             document.querySelector(".wins").innerHTML = "Win :  " + halloween.winner;
             this.startUp();
             return this.winner;
-            
+
 
 
         } else if (this.guess === 0) {
@@ -134,18 +134,18 @@ var halloween = {
 
 
     },
-    "startUp" : function(){
-    Wrnd = "";
- rndWord = [];
- rndWordUC = [];
- alphabetUS = [];
- alphabetNC = [];    
-this.guess= 15;    
-this.RndWord();
-this.RndWordUC();
-this.alphabetarray()
-this.update()
-this.replaceUCword();
+    "startUp": function () {
+        Wrnd = "";
+        rndWord = [];
+        rndWordUC = [];
+        alphabetUS = [];
+        alphabetNC = [];
+        this.guess = 15;
+        this.RndWord();
+        this.RndWordUC();
+        this.alphabetarray()
+        this.update()
+        this.replaceUCword();
 
     }
 }
@@ -188,16 +188,6 @@ document.querySelector('.wordGuess').innerHTML = "Word  :  "
 
 
 /*
-console.log(halloween.RndWord());
-console.log(halloween.RndWordUC());
-console.log(halloween.alphabet);
-console.log(halloween.alphabetarray());
-console.log(alphabetNC);
-console.log(halloween.update());
-console.log(halloween.alphabetNC);
-console.log(rndWord);
-console.log(halloween.guess);
-console.log(halloween.replaceUCword());
-console.log(worduser);
-
+ON start
 */
+
