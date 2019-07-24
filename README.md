@@ -4,8 +4,7 @@ Word-Guess-Game
 
 Description
 ------
-A simple word guessing game themed around Halloween.
-
+First Independent project done through the simple use of html,css,boostrap, and javascript. Guessing the word is the name of this game however you already get a big hint in the way of its theme.The word is presented in in underscores and you would have letters you already guessed under the unsolved word. Animations are used during wins and loses for extra touch
 Link to the [Site](https://jetenderg.github.io/Word-Guess-Game/)
 
 ![Page](/assets/images/1560841096891.png)
